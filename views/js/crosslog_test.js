@@ -1,23 +1,34 @@
 window.addEventListener("load", function () {
-  crosslogTest();
+    crosslogTest();
+    $(document).ready(function () {
+        $("#add_voucher").after(btn);
+        $(".open").click(function (e) {
+            e.preventDefault();
+            $(".pop-outer").fadeIn("slow");
+        });
+        $(".close").click(function (e) {
+            e.preventDefault();
+            $(".pop-outer").fadeOut("slow");
+        });
+    });
 });
 
 function crosslogTest() {
-  if (document.createStyleSheet) {
-    document.createStyleSheet(
-      "https://prestashop17.cms.crossdesk.com/modules/crosslogtest/views/css/crosslog_test.css"
-    );
-  } else {
-    var styles =
-      "@import url('https://prestashop17.cms.crossdesk.com/modules/crosslogtest/views/css/crosslog_test.css');";
+    if (document.createStyleSheet) {
+        document.createStyleSheet(
+            "https://prestashop17.cms.crossdesk.com/modules/crosslogtest/views/css/crosslog_test.css"
+        );
+    } else {
+        var styles =
+            "@import url('https://prestashop17.cms.crossdesk.com/modules/crosslogtest/views/css/crosslog_test.css');";
 
-    var newSS = document.createElement("link");
-    newSS.rel = "stylesheet";
-    newSS.href = "data:text/css," + escape(styles);
-    document.getElementsByTagName("head")[0].appendChild(newSS);
-  }
+        var newSS = document.createElement("link");
+        newSS.rel = "stylesheet";
+        newSS.href = "data:text/css," + escape(styles);
+        document.getElementsByTagName("head")[0].appendChild(newSS);
+    }
 
-  var btn = `
+    var btn = `
   <button type="button" class="btn btn-default open"><i class="icon-ticket"></i> Gestion de retour</button>
   <div style="display: none;" class="pop-outer container-fluid">
       <div class="pop-inner">
@@ -169,15 +180,5 @@ function crosslogTest() {
   </div>
 
         `;
-  $(document).ready(function () {
-    $("#add_voucher").after(btn);
-    $(".open").click(function (e) {
-      e.preventDefault();
-      $(".pop-outer").fadeIn("slow");
-    });
-    $(".close").click(function (e) {
-      e.preventDefault();
-      $(".pop-outer").fadeOut("slow");
-    });
-  });
+
 }
