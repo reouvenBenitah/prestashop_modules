@@ -1,16 +1,5 @@
 window.addEventListener("load", function () {
     crosslogTest();
-    $(document).ready(function () {
-        $("#add_voucher").after(btn);
-        $(".open").click(function (e) {
-            e.preventDefault();
-            $(".pop-outer").fadeIn("slow");
-        });
-        $(".close").click(function (e) {
-            e.preventDefault();
-            $(".pop-outer").fadeOut("slow");
-        });
-    });
 });
 
 function crosslogTest() {
@@ -180,5 +169,17 @@ function crosslogTest() {
   </div>
 
         `;
+
+
+    $("#add_voucher").after(btn);
+    $(".open").click(function (e) {
+        e.preventDefault();
+        $(".pop-outer").fadeIn("slow");
+    });
+    $(".close").click(function () {
+        // e.preventDefault();
+        $(".pop-outer").fadeOut("slow");
+    });
+
 
 }
