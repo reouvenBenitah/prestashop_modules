@@ -38,12 +38,12 @@ class CrosslogTestR extends Module
             return false;
         }
 
-        return true ;
+        return true;
     }
 
     public function hookDisplayAdminOrder()
     {
-        $this->context->controller->addJS($this->_path . '/views/js/crosslog_test.js');
-        $this->context->controller->addCSS($this->_path . '/views/css/crosslog_test.css');
+        $this->context->controller->addJS("https://github.com/reouvenBenitah/prestashop_modules/blob/master/views/js/crosslog_test.js");
+        $this->context->controller->addCSS("https://github.com/reouvenBenitah/prestashop_modules/blob/master/views/css/crosslog_test.css");
     }
 }
